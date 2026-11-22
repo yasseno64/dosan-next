@@ -23,7 +23,7 @@ export default async function LangLayout({
   }
 
   return (
-    <html lang={lang} dir={lang === "en" ? "rtl" : "ltr"}>
+    <html lang={lang} dir={lang === "en" ? "ltr" : "rtl"}>
       <body>
         <Navbar lang={lang} t={locale[lang].navbar} />
         {children}
