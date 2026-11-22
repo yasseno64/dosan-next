@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+@keyframes nav-shrink {
+  to {
+    height: 64px;
+    background: rgba(6, 56, 69, 0.92);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+.nav-scroll {
+  height: 86px;
+  animation: nav-shrink linear both;
+  animation-timeline: scroll();
+  animation-range: 0 40px;
+}
