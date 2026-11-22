@@ -113,7 +113,7 @@ export default function Navbar({ lang, t }: Props) {
                   className="flex items-center justify-between border-b border-white/10 py-4 text-base font-bold text-white transition hover:text-[#1cd2ad]"
                 >
                   <span>{t[key]}</span>
-                  <span className="text-lg text-[#1cd2ad]">{isArabic ? "→" : "←"}</span>
+                  <span className="text-lg text-[#1cd2ad]">{isArabic ? "←" : "→"}</span>
                 </a>
               ))}
             </nav>
