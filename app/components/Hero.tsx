@@ -65,8 +65,9 @@ export default function Hero({ t }: Props) {
           <span className="text-[11px] font-semibold uppercase tracking-[1.6px] text-white/60">
             {t.scrollHint}
           </span>
-          <span className="animate-bounce font-bold text-[#1dcca0]">↓</span>
-        </div>
+<span className="mt-4 text-[#1dcca0] animate-[bounce_2s_ease-in-out_infinite]">
+  ↓
+</span>        </div>
       </div>
     </section>
   );
