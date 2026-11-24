@@ -4,6 +4,11 @@
 @theme {
   --font-montserrat: "Montserrat", sans-serif;
 }
+@layer base {
+  button, [role="button"], a, summary, select {
+    cursor: pointer;
+  }
+}
 
 ::selection {
   background-color: #1cd2ad;

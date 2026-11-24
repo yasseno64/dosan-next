@@ -21,6 +21,7 @@ export default function Navbar({ lang, t }: Props) {
     <header
       id="navbar"
       className="nav-scroll fixed inset-x-0 top-0 z-[100] flex items-center gap-[clamp(12px,2vw,32px)] px-[clamp(14px,3vw,44px)] "
+      style={{backdropFilter: "saturate(140%) blur(10px)"}}
     >
       {/* Logo */}
       <a href={`/${lang}`} className="flex shrink-0 items-center">
@@ -38,7 +39,7 @@ export default function Navbar({ lang, t }: Props) {
           <a
             key={key}
             href={`#${key}`}
-            className="flex-none whitespace-nowrap py-1.5 text-[13.5px] font-medium tracking-[0.3px] text-white underline decoration-transparent decoration-[1.3px] underline-offset-[7px] hover:decoration-[#24a88b]"
+            className="flex-none whitespace-nowrap py-1.5 text-[11.5px] font-medium tracking-[0.3px] text-white underline decoration-transparent decoration-[1.3px] underline-offset-[7px] hover:decoration-[#24a88b]"
           >
             {t[key]}
           </a>
@@ -49,7 +50,7 @@ export default function Navbar({ lang, t }: Props) {
         <LangSwitcher lang={lang} />
         <button
           type="button"
-          className="inline-flex h-9 items-center justify-center rounded-md  bg-[#1dcca0] px-3 text-sm font-semibold leading-none text-[#00201a] transition active:scale-95 "
+          className="inline-flex h-9 items-center justify-center rounded-[10px]  bg-[#1dcca0] px-4  text-[11.5px] font-semibold leading-none text-[#00201a] transition active:scale-95 "
         >
           {t.rateWebsite}
         </button>
