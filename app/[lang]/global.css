@@ -1,4 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
 @import "tailwindcss";
+
+@theme {
+  --font-montserrat: "Montserrat", sans-serif;
+}
+
+::selection {
+  background-color: #1cd2ad;
+}
+
+* {
+  font-family: var(--font-montserrat);
+}
 
 @keyframes nav-shrink {
   to {
@@ -14,4 +27,27 @@
   animation: nav-shrink linear both;
   animation-timeline: scroll();
   animation-range: 0 40px;
+}
+
+@keyframes hero-zoom {
+  from { transform: scale(1.4); }
+  to   { transform: scale(1); }
+}
+
+@keyframes hint-hide {
+  to { opacity: 0; visibility: hidden; }
+}
+
+@media (min-width: 640px) {
+  .hero-zoom {
+    animation: hero-zoom ease-out both;
+    animation-timeline: scroll(root);
+    animation-range: 0 calc(140vh);
+  }
+}
+
+.hero-hint {
+  animation: hint-hide linear both;
+  animation-timeline: scroll(root);
+  animation-range: 120px 133px;
 }
