@@ -1,4 +1,6 @@
 import Hero from "../components/Hero";
+import Static from "../components/Static";
+import Insights from "../components/Insights";
 import ar from "../locales/ar.json";
 import en from "../locales/en.json";
 
@@ -15,6 +17,8 @@ export default async function HomePage({
   return (
     <div>
       <Hero t={dict.Hero} />
+      <Static t={dict.Static} />
+      <Insights lang={lang as "ar" | "en"} t={dict.Insights} />
     </div>
   );
 }
