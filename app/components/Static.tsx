@@ -1,15 +1,16 @@
-// components/Static.tsx
+import CountUp from "../animations/CountUp";
+import MouseGlow from "../animations/MouseGlow";
 type Props = {
   lang: "ar" | "en";
-  t: any; // locale[lang].Static
+  t: any; 
 };
 
 const metrics = [
-  { key: "alfanar", value: "117" },
-  { key: "damac", value: "35" },
-  { key: "extra", value: "49,623" },
-  { key: "coolingCost", value: "66" },
-  { key: "tempDrop", value: "20" },
+  { key: "alfanar", value: 117 },
+  { key: "damac", value: 35 },
+  { key: "extra", value: 49623, separator: "," },
+  { key: "coolingCost", value: 66 },
+  { key: "tempDrop", value: 20 },
 ];
 
 export default function Static({ lang, t }: Props) {
@@ -23,6 +24,7 @@ export default function Static({ lang, t }: Props) {
         `,
       }}
     >
+        <MouseGlow />
       <div className="mx-auto max-w-[1500px] px-5 py-16 md:px-8 lg:px-12 xl:px-16">
         <div className="flex flex-col items-start gap-4 lg:mb-16">
           <span className="inline-flex rounded-full px-3 py-1 text-[12px] font-medium text-[#0D7A62]">
@@ -44,13 +46,20 @@ export default function Static({ lang, t }: Props) {
         </div>
 
         <div className="grid grid-cols-2 gap-x-8 gap-y-10 md:grid-cols-2 xl:grid-cols-5">
-          {metrics.map((metric) => (
+          {metrics.map((metric, index) => (
             <div
               key={metric.key}
               className="flex min-h-[210px] flex-col justify-end"
             >
               <div className="text-[clamp(2rem,3vw,4rem)] font-bold leading-none tracking-[-0.06em] text-white transition-colors duration-300 hover:text-[#1dcca0]">
-                {metric.value}
+                <CountUp
+                  from={0}
+                  to={metric.value}
+                  separator={metric.separator || ""}
+                  direction="up"
+                  duration={1}
+                  delay={index * 0.3}
+                />
                 {t.metrics[metric.key].unit}
               </div>
 
