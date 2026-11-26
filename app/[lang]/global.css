@@ -56,3 +56,34 @@
   animation-timeline: scroll(root);
   animation-range: 120px 133px;
 }
+
+/* globals.css */
+
+/* ظهور القسم مع الـ scroll */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+}
+.reveal {
+  animation: fade-up linear both;
+  animation-timeline: view();
+  animation-range: entry 0% entry 50%;
+}
+
+/* العداد */
+@property --num {
+  syntax: "<integer>";
+  inherits: false;
+  initial-value: 0;
+}
+@keyframes count-up {
+  from { --num: 0; }
+}
+.count {
+  counter-reset: num var(--num);
+  animation: count-up ease-out both;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+}
+.count::after {
+  content: counter(num);
+}
