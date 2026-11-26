@@ -17,7 +17,7 @@ export default async function HomePage({
   return (
     <div>
       <Hero t={dict.Hero} />
-      <Static t={dict.Static} />
+      <Static lang={lang as "ar" | "en"} t={dict.Static} />
       <Insights lang={lang as "ar" | "en"} t={dict.Insights} />
     </div>
   );
